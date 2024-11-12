@@ -9,9 +9,9 @@ class Animal {
 
     /**
      * Construtor da classe Animal.
-     * @para nome Nome do animal
-     * @para idade Idade do animal
-     * @para sexo Sexo do animal (M/F)
+     * @param nome Nome do animal
+     * @param idade Idade do animal
+     * @param sexo Sexo do animal (M/F)
      */
     public Animal(String nome, int idade, String sexo) {
         this.nome = nome;
