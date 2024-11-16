@@ -43,7 +43,7 @@ public class CadastroAnimais {
                     System.out.println("Saindo...");
                     break;
                 default:
-                    System.out.println("Opção inválida. Tente novamente.");
+                    System.out.println("Opção inválida. Tente novamente");
             }
         } while (opcao != 7);
 
@@ -125,9 +125,6 @@ public class CadastroAnimais {
         boolean podeVoar = scanner.nextBoolean();
         scanner.nextLine();
 
-        Passaro passaro = new Passaro(nome, idade, sexo, podeVoar);
-        animais.add(passaro);
-        System.out.println("Pássaro cadastrado com sucesso!");
     }
 
     private static void cadastrarTartaruga(Scanner scanner) {
@@ -145,9 +142,6 @@ public class CadastroAnimais {
         boolean viveNaAgua = scanner.nextBoolean();
         scanner.nextLine();
 
-        Tartaruga tartaruga = new Tartaruga(nome, idade, sexo, viveNaAgua);
-        animais.add(tartaruga);
-        System.out.println("Tartaruga cadastrada com sucesso!");
     }
 
     private static void listarAnimais() {

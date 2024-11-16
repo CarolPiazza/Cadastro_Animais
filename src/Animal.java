@@ -1,123 +1,110 @@
-import java.util.ArrayList;
 /**
  * Classe Animal que representa as informações básicas de um animal.
  */
-class Animal {
-    private String nome;
+abstract class Animal {
+    private String nomePet;
+    private String nomeTutor;
+    private String codigoMicrochip;
     private int idade;
     private String sexo;
+    private double peso;
+    private String castracao;
+    private String planoSaude;
 
     /**
-     * Construtor da classe Animal.
-     * @param nome Nome do animal
-     * @param idade Idade do animal
-     * @param sexo Sexo do animal (M/F)
+     * Construtor principal da classe Animal.
+     *
+     * @param nomePet         Nome do animal de estimação.
+     * @param nomeTutor       Nome do tutor do animal.
+     * @param codigoMicrochip Código do microchip do animal.
+     * @param idade           Idade do animal em meses;
+     * @param sexo            Sexo do animal (M/F).
+     * @param peso            Peso do animal (em kg).
+     * @param castracao       Condição de castração do animal (Sim/Não).
+     * @param planoSaude      Se há plano de saúde vigente (Sim/Não)
      */
-    public Animal(String nome, int idade, String sexo) {
-        this.nome = nome;
+
+
+    public Animal(String nomePet, String nomeTutor, String codigoMicrochip, int idade, String sexo, double peso, String castracao, String planoSaude) {
+        this.nomePet = nomePet;
+        this.nomeTutor = nomeTutor;
+        this.codigoMicrochip = codigoMicrochip;
         this.idade = idade;
         this.sexo = sexo;
+        this.peso = peso;
+        this.castracao = castracao;
+        this.planoSaude = planoSaude;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomePet() {
+        return nomePet;
+    }
+
+    public void setNomePet(String nomePet) {
+        this.nomePet = nomePet;
+    }
+
+    public String getNomeTutor() {
+        return nomeTutor;
+    }
+
+    public void setNomeTutor(String nomeTutor) {
+        this.nomeTutor = nomeTutor;
+    }
+
+    public String getCodigoMicrochip() {
+        return codigoMicrochip;
+    }
+
+    public void setCodigoMicrochip(String codigoMicrochip) {
+        this.codigoMicrochip = codigoMicrochip;
     }
 
     public int getIdade() {
         return idade;
     }
 
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
     public String getSexo() {
         return sexo;
     }
 
-    @Override
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public String getCastracao() {
+        return castracao;
+    }
+
+    public void setCastracao(String castracao) {
+        this.castracao = castracao;
+    }
+
+    public String getPlanoSaude() {
+        return planoSaude;
+    }
+
+    public void setPlanoSaude(String planoSaude) {
+        this.planoSaude = planoSaude;
+    }
+
     public String toString() {
-        return "Nome: " + nome + ", Idade: " + idade + " anos, Sexo: " + sexo;
-    }
-}
-
-/**
- * Classe Gato que herda de Animal e adiciona informações específicas.
- */
-class Gato extends Animal {
-    private boolean gostaDeArranhar;
-
-    public Gato(String nome, int idade, String sexo, boolean gostaDeArranhar) {
-        super(nome, idade, sexo);
-        this.gostaDeArranhar = gostaDeArranhar;
+        return "Nome: " + nomePet + "Microchip: " + codigoMicrochip + ", Idade: " + idade + " anos, Sexo: " + sexo + "Tutor: " + nomeTutor;
     }
 
-    @Override
-    public String toString() {
-        return super.toString() + ", Tipo: Gato, Gosta de arranhar: " + (gostaDeArranhar ? "Sim" : "Não");
-    }
-}
+    public abstract String calendarioVacinal();
 
-/**
- * Classe Cachorro que herda de Animal e adiciona informações específicas.
- */
-class Cachorro extends Animal {
-    private boolean gostaDeBrincar;
-
-    public Cachorro(String nome, int idade, String sexo, boolean gostaDeBrincar) {
-        super(nome, idade, sexo);
-        this.gostaDeBrincar = gostaDeBrincar;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString() + ", Tipo: Cachorro, Gosta de brincar: " + (gostaDeBrincar ? "Sim" : "Não");
-    }
-}
-
-/**
- * Classe Hamster que herda de Animal e adiciona informações específicas.
- */
-class Hamster extends Animal {
-    private boolean possuiRoda;
-
-    public Hamster(String nome, int idade, String sexo, boolean possuiRoda) {
-        super(nome, idade, sexo);
-        this.possuiRoda = possuiRoda;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString() + ", Tipo: Hamster, Possui roda: " + (possuiRoda ? "Sim" : "Não");
-    }
-}
-
-/**
- * Classe Passaro que herda de Animal e adiciona informações específicas.
- */
-class Passaro extends Animal {
-    private boolean podeVoar;
-
-    public Passaro(String nome, int idade, String sexo, boolean podeVoar) {
-        super(nome, idade, sexo);
-        this.podeVoar = podeVoar;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString() + ", Tipo: Pássaro, Pode voar: " + (podeVoar ? "Sim" : "Não");
-    }
-}
-
-/**
- * Classe Tartaruga que herda de Animal e adiciona informações específicas.
- */
-class Tartaruga extends Animal {
-    private boolean viveNaAgua;
-
-    public Tartaruga(String nome, int idade, String sexo, boolean viveNaAgua) {
-        super(nome, idade, sexo);
-        this.viveNaAgua = viveNaAgua;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString() + ", Tipo: Tartaruga, Vive na água: " + (viveNaAgua ? "Sim" : "Não");
-    }
+    public abstract String pesoSaudavel();
 }
