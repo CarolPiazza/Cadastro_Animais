@@ -35,38 +35,17 @@ abstract class Animal {
 	}
 
 
-	/**
-	 * Construtor principal da classe Animal.
-	 *
-	 * @param nomePet    Nome do animal de estimação.
-	 * @param nomeTutor  Nome do tutor do animal.
-	 * @param idade      Idade do animal em meses;
-	 * @param sexo       Sexo do animal (M/F).
-	 * @param peso       Peso do animal (em kg).
-	 * @param castracao  Condição de castração do animal (Sim/Não).
-	 * @param planoSaude Se há plano de saúde vigente (Sim/Não)
-	 */
-	public Animal(String nomePet, String nomeTutor, int idade, String sexo, double peso, boolean castracao, boolean planoSaude) {
-		this.nomePet = nomePet;
-		this.nomeTutor = nomeTutor;
-		this.idade = idade;
-		this.sexo = sexo;
-		this.peso = peso;
-		this.castracao = castracao;
-		this.planoSaude = planoSaude;
-	}
-
-	public String getNomePet() {
-		return nomePet;
-	}
-
-	public void setNomePet(String nomePet) {
-		this.nomePet = nomePet;
-	}
-
-	public String getNomeTutor() {
-		return nomeTutor;
-	}
+    /**
+     * Construtor da classe Animal.
+     * @param nome Nome do animal
+     * @param idade Idade do animal
+     * @param sexo Sexo do animal (M/F)
+     */
+    public Animal(String nome, int idade, String sexo) {
+        this.nome = nome;
+        this.idade = idade;
+        this.sexo = sexo;
+    }
 
 	public void setNomeTutor(String nomeTutor) {
 		this.nomeTutor = nomeTutor;
