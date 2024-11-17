@@ -1,42 +1,100 @@
 /**
- * Classe Cachorro que herda de Animal e adiciona informações específicas.
+ * Classe Cachorro que herda da classe Animal e adiciona informações específicas sobre cães.
  */
 public class Cachorro extends Animal {
+	/**
+	 * Indica se o cachorro gosta de brincar.
+	 */
 	private boolean gostaDeBrincar;
+	/**
+	 * Porte do cachorro (pequeno, médio ou grande).
+	 */
 	private String porte;
-
+	/**
+	 * Construtor da classe Cachorro que inclui o código do microchip.
+	 *
+	 * @param nomePet         Nome do cachorro.
+	 * @param nomeTutor       Nome do tutor do cachorro.
+	 * @param codigoMicrochip Código do microchip do cachorro.
+	 * @param idade           Idade do cachorro em meses.
+	 * @param sexo            Sexo do cachorro (M/F).
+	 * @param peso            Peso do cachorro em quilogramas.
+	 * @param castracao       Indica se o cachorro é castrado.
+	 * @param planoSaude      Indica se o cachorro possui plano de saúde.
+	 * @param gostaDeBrincar  Indica se o cachorro gosta de brincar.
+	 * @param porte           Porte do cachorro (pequeno, médio ou grande).
+	 */
 	public Cachorro(String nomePet, String nomeTutor, String codigoMicrochip, int idade, String sexo, double peso, boolean castracao, boolean planoSaude, boolean gostaDeBrincar, String porte) {
 		super(nomePet, nomeTutor, codigoMicrochip, idade, sexo, peso, castracao, planoSaude);
 		this.gostaDeBrincar = gostaDeBrincar;
 		this.porte = porte;
 	}
-
+	/**
+	 * Construtor da classe Cachorro sem incluir o código do microchip.
+	 *
+	 * @param nomePet        Nome do cachorro.
+	 * @param nomeTutor      Nome do tutor do cachorro.
+	 * @param idade          Idade do cachorro em meses.
+	 * @param sexo           Sexo do cachorro (M/F).
+	 * @param peso           Peso do cachorro em quilogramas.
+	 * @param castracao      Indica se o cachorro é castrado.
+	 * @param planoSaude     Indica se o cachorro possui plano de saúde.
+	 * @param gostaDeBrincar Indica se o cachorro gosta de brincar.
+	 * @param porte          Porte do cachorro (pequeno, médio ou grande).
+	 */
 	public Cachorro(String nomePet, String nomeTutor, int idade, String sexo, double peso, boolean castracao, boolean planoSaude, boolean gostaDeBrincar, String porte) {
 		super(nomePet, nomeTutor, idade, sexo, peso, castracao, planoSaude);
 		this.gostaDeBrincar = gostaDeBrincar;
 		this.porte = porte;
 	}
+	/**
+	 * Obtém a informação se o cachorro gosta de brincar.
+	 *
+	 * @return true se o cachorro gosta de brincar, false caso contrário.
+	 */
 
 	public boolean getGostaDeBrincar() {
 		return gostaDeBrincar;
 	}
+	/**
+	 * Define se o cachorro gosta de brincar.
+	 *
+	 * @param gostaDeBrincar true se gosta de brincar, false caso contrário.
+	 */
 
 	public void setGostaDeBrincar(boolean gostaDeBrincar) {
 		this.gostaDeBrincar = gostaDeBrincar;
 	}
-
+	/**
+	 * Obtém o porte do cachorro.
+	 *
+	 * @return Porte do cachorro (pequeno, médio ou grande).
+	 */
 	public String getPorte() {
 		return porte;
 	}
-
+	/**
+	 * Define o porte do cachorro.
+	 *
+	 * @param porte Porte do cachorro (pequeno, médio ou grande).
+	 */
 	public void setPorte(String porte) {
 		this.porte = porte;
 	}
-
+	/**
+	 * Retorna uma representação textual das informações do cachorro, incluindo as informações específicas.
+	 *
+	 * @return String com as informações do cachorro.
+	 */
 	@Override
 	public String toString() {
 		return super.toString() + String.format("\nTipo: Cachorro\nPorte: %s\nGosta de brincar: %s", porte, gostaDeBrincar ? "Sim" : "Nao");
 	}
+	/**
+	 * Retorna o calendário vacinal recomendado com base na idade do cachorro.
+	 *
+	 * @return String com as recomendações de vacinação.
+	 */
 
 	@Override
 	public String calendarioVacinal() {
@@ -73,6 +131,11 @@ public class Cachorro extends Animal {
 					""";
 		}
 	}
+	/**
+	 * Avalia se o peso do cachorro está dentro do intervalo saudável para o seu porte.
+	 *
+	 * @return String com a avaliação do peso.
+	 */
 
 	@Override
 	public String avaliacaoPeso() {
@@ -96,7 +159,11 @@ public class Cachorro extends Animal {
 				return "Porte inválido. Informe 'pequeno', 'medio' ou 'grande'!";
 		}
 	}
-
+	/**
+	 * Realiza a castração do cachorro caso seja viável, considerando idade, peso e plano de saúde.
+	 *
+	 * @return String com o resultado ou custo da castração.
+	 */
 	@Override
 	public String castrar() {
 		double peso = getPeso();

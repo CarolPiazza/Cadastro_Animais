@@ -1,32 +1,75 @@
 /**
  * Classe Gato que herda de Animal e adiciona informações específicas.
  */
-class Gato extends Animal {
-	private boolean gostaDeArranhar;
-
+public class Gato extends Animal {
+	/**
+	 * Indica se o gato gosta de arranhar.
+	 */
+	public boolean gostaDeArranhar;
+	/**
+	 * Construtor da classe Gato que inclui o código do microchip.
+	 *
+	 * @param nomePet         Nome do gato.
+	 * @param nomeTutor       Nome do tutor do gato.
+	 * @param codigoMicrochip Código do microchip do gato.
+	 * @param idade           Idade do gato em meses.
+	 * @param sexo            Sexo do gato (M/F).
+	 * @param peso            Peso do gato em quilogramas.
+	 * @param castracao       Indica se o gato é castrado.
+	 * @param planoSaude      Indica se o gato possui plano de saúde.
+	 * @param gostaDeArranhar Indica se o gato gosta de arranhar.
+	 */
 	public Gato(String nomePet, String nomeTutor, String codigoMicrochip, int idade, String sexo, double peso, boolean castracao, boolean planoSaude, boolean gostaDeArranhar) {
 		super(nomePet, nomeTutor, codigoMicrochip, idade, sexo, peso, castracao, planoSaude);
 		this.gostaDeArranhar = gostaDeArranhar;
 	}
-
+	/**
+	 * Construtor da classe Gato sem incluir o código do microchip.
+	 *
+	 * @param nomePet        Nome do gato.
+	 * @param nomeTutor      Nome do tutor do gato.
+	 * @param idade          Idade do gato em meses.
+	 * @param sexo           Sexo do gato (M/F).
+	 * @param peso           Peso do gato em quilogramas.
+	 * @param castracao      Indica se o gato é castrado.
+	 * @param planoSaude     Indica se o gato possui plano de saúde.
+	 * @param gostaDeArranhar Indica se o gato gosta de arranhar.
+	 */
 	public Gato(String nomePet, String nomeTutor, int idade, String sexo, double peso, boolean castracao, boolean planoSaude, boolean gostaDeArranhar) {
 		super(nomePet, nomeTutor, idade, sexo, peso, castracao, planoSaude);
 		this.gostaDeArranhar = gostaDeArranhar;
 	}
-
+	/**
+	 * Obtém a informação se o gato gosta de arranhar.
+	 *
+	 * @return true se o gato gosta de arranhar, false caso contrário.
+	 */
 	public boolean getGostaDeArranhar() {
 		return gostaDeArranhar;
 	}
 
+	/**
+	 * Define se o gato gosta de arranhar.
+	 *
+	 * @param gostaDeArranhar true se gosta de arranhar, false caso contrário.
+	 */
 	public void setGostaDeArranhar(boolean gostaDeArranhar) {
 		this.gostaDeArranhar = gostaDeArranhar;
 	}
-
+	/**
+	 * Retorna uma representação textual das informações do gato, incluindo as informações específicas.
+	 *
+	 * @return String com as informações do gato.
+	 */
 	@Override
 	public String toString() {
 		return super.toString() + String.format("\nTipo: Gato\nGosta de arranhar: %s", gostaDeArranhar ? "Sim" : "Nao");
 	}
-
+	/**
+	 * Retorna o calendário vacinal recomendado com base na idade do gato.
+	 *
+	 * @return String com as recomendações de vacinação.
+	 */
 	@Override
 	public String calendarioVacinal() {
 		if (getIdade() < 0) {
@@ -62,7 +105,11 @@ class Gato extends Animal {
 					""";
 		}
 	}
-
+	/**
+	 * Avalia se o peso do gato está dentro do intervalo saudável.
+	 *
+	 * @return String com a avaliação do peso.
+	 */
 	@Override
 	public String avaliacaoPeso() {
 		if (getPeso() >= 2.5 && getPeso() <= 6) {
@@ -71,6 +118,11 @@ class Gato extends Animal {
 		return "O peso do gato está fora do intervalo saudável.";
 	}
 
+	/**
+	 * Realiza a castração do gato caso seja viável, considerando idade, peso e plano de saúde.
+	 *
+	 * @return String com o resultado ou custo da castração.
+	 */
 	@Override
 	public String castrar() {
 		double peso = getPeso();
