@@ -1,7 +1,7 @@
 /**
  * Classe Animal que representa as informações básicas de um animal.
  */
-public class Animal {
+abstract class Animal {
 
 	/**
 	 * Nome do animal de estimação.
@@ -164,6 +164,7 @@ public class Animal {
 	public String getSexo() {
 		return sexo;
 	}
+
 	/**
 	 * Define o sexo do animal.
 	 *
@@ -181,6 +182,7 @@ public class Animal {
 	public double getPeso() {
 		return peso;
 	}
+
 	/**
 	 * Define o peso do animal em quilogramas.
 	 *
@@ -190,6 +192,7 @@ public class Animal {
 	public void setPeso(double peso) {
 		this.peso = peso;
 	}
+
 	/**
 	 * Verifica se o animal é castrado.
 	 *
@@ -199,6 +202,7 @@ public class Animal {
 	public boolean getCastracao() {
 		return castracao;
 	}
+
 	/**
 	 * Define a condição de castração do animal.
 	 *
@@ -218,6 +222,7 @@ public class Animal {
 	public boolean getPlanoSaude() {
 		return planoSaude;
 	}
+
 	/**
 	 * Define se o animal possui plano de saúde.
 	 *
@@ -227,6 +232,7 @@ public class Animal {
 	public void setPlanoSaude(boolean planoSaude) {
 		this.planoSaude = planoSaude;
 	}
+
 	/**
 	 * Retorna uma representação textual das informações do animal.
 	 *
@@ -252,6 +258,7 @@ public class Animal {
 	 * @return String com o calendário vacinal.
 	 */
 	public abstract String calendarioVacinal();
+
 	/**
 	 * Método abstrato que avalia o peso do animal.
 	 *
